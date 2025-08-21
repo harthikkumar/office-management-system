@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Office Management System</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f4f6f9;
+    }
+
+    .main-card {
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      margin-top: 60px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      background-color: #ffffff;
+    }
+
+    .btn-custom {
+      width: 100%;
+      margin: 10px 0;
+      font-weight: 500;
+    }
+
+    .btn i {
+      margin-right: 8px;
+    }
+
+    h2 {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="main-card text-center">
+      <h2 class="mb-4">📋 Office Management System</h2>
+      <div class="d-grid gap-2">
+        <a href="/all_emp" class="btn btn-success btn-custom">
+          <i class="bi bi-people-fill"></i> All Employees
+        </a>
+        <a href="/add_emp" class="btn btn-primary btn-custom">
+          <i class="bi bi-person-plus-fill"></i> Add Employee
+        </a>
+        <a href="/remove_emp" class="btn btn-danger btn-custom">
+          <i class="bi bi-person-dash-fill"></i> Remove Employee
+        </a>
+        <a href="/filter_emp" class="btn btn-warning btn-custom text-white">
+          <i class="bi bi-funnel-fill"></i> Filter Employees
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

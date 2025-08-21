@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filter Employee Details</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons (optional for better UI) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body style="background-color: #f8f9fa;">
+
+<div class="container py-5">
+  <div class="card shadow">
+    <div class="card-header bg-primary text-white">
+      <h3 class="mb-0"><i class="bi bi-funnel-fill me-2"></i>Filter Employee Details</h3>
+    </div>
+
+    <div class="card-body">
+      <form action="/filter_emp" method="post">
+        {% csrf_token %}
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="name" class="form-label">Employee First/Last Name</label>
+            <input type="text" id="name" name="name" value="{{ name }}" class="form-control" placeholder="e.g. John or Doe">
+          </div>
+
+          <div class="col-md-3">
+            <label for="dept" class="form-label">Department ID</label>
+            <input type="number" id="dept" name="dept" value="{{ dept }}" class="form-control">
+          </div>
+
+          <div class="col-md-3">
+            <label for="role" class="form-label">Role ID</label>
+            <input type="number" id="role" name="role" value="{{ role }}" class="form-control">
+          </div>
+        </div>
+
+        <div class="text-end">
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-search me-1"></i>Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  {% if emps %}
+  <div class="card mt-4 shadow-sm">
+    <div class="card-header bg-dark text-white">
+      <h5 class="mb-0"><i class="bi bi-list-ul me-2"></i>Filtered Results</h5>
+    </div>
+
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover mb-0">
+          <thead class="table-light">
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for emp in emps %}
+            <tr>
+              <td>{{ emp.id }}</td>
+              <td>{{ emp.first_name }} {{ emp.last_name }}</td>
+              <td>{{ emp.dept.dept_name }}</td>
+              <td>{{ emp.role.name }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
