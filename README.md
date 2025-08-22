@@ -53,6 +53,8 @@ A simple, responsive web application for managing employee data. This system all
   - `roles` — List of roles for dropdowns  
 - Implement backend routes to add, list, filter, and remove employees.
 
-#License
-This project is open source. You are free to use, modify, and distribute it.
+# 
+
+- This project is open source. You are free to use, modify, and distribute it.
+
 
